@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/styles/display.css">
+<h1>All Users</h1>
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone</th>
+        <th>Location</th>
+        <th>Actions</th>
+    </tr>
+    {{#each users}}
+    <tr>
+        <td>{{this.firstName}}</td>
+        <td>{{this.lastName}}</td>
+        <td>{{this.number}}</td>
+        <td>{{this.location}}</td>
+        <td>
+            <a href="/edit/{{this._id}}">Edit</a>
+            <form action="/delete/{{this._id}}" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+<a href="/">Back to Form</a>
+
